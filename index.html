@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+
+  <h1>Typing Speed Test</h1>
+
+  <!-- Paragraph input card -->
+  <section class="setup-card">
+    <label for="paragraphInput">Enter your paragraph:</label>
+    <textarea id="paragraphInput" rows="4" placeholder="Paste your paragraph here..."></textarea>
+    <button id="startBtn">Start Test</button>
+  </section>
+
+  <!-- Typing test area (hidden until start) -->
+  <section id="testArea" class="text-card hidden">
+    <div class="stats" role="status" aria-live="polite">
+      <div class="stat-box">Time: <span id="timer">0.0</span> sec</div>
+      <div class="stat-box">WPM: <span id="speed">0</span></div>
+      <div class="stat-box">Accuracy: <span id="accuracy">100</span>%</div>
+      <div class="stat-box">Mistakes: <span id="mistakes">0</span></div>
+      <div class="stat-box">CPM: <span id="cpm">0</span></div>
+    </div>
+    <h2>Type this paragraph:</h2>
+    <div id="displayText"></div>
+    <textarea id="typingBox" placeholder="Start typing here..." disabled spellcheck="false"></textarea>
+    <button id="completeBtn" type="button" disabled>Complete Test</button>
+  </section>
+
+  <!-- Result panel (hidden until test complete) -->
+  <section id="resultBox" class="result-card hidden">
+    <h2>🎉 Your Result</h2>
+    <div class="result-grid">
+      <div><span>Time</span><strong id="resultTime">0.0</strong><small>sec</small></div>
+      <div><span>WPM</span><strong id="resultSpeed">0</strong></div>
+      <div><span>Accuracy</span><strong id="resultAccuracy">0</strong><small>%</small></div>
+      <div><span>Mistakes</span><strong id="resultMistakes">0</strong></div>
+    </div>
+    <button id="retryBtn">Try Again</button>
+  </section>
+
+  <!-- History panel (past attempts) -->
+  <section id="historyBox" class="history-card hidden">
+    <h2>Recent Results</h2>
+    <ul id="historyList"></ul>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
